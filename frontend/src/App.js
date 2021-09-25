@@ -6,6 +6,11 @@ import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 
+import { ToastContainer } from "react-toastify";
+
+import axios from "axios";
+axios.defaults.baseURL = "http://127.0.0.1:8000";
+
 class App extends Component {
   render() {
     return (
@@ -19,6 +24,7 @@ class App extends Component {
             <Route path="*">Ups</Route>
           </Switch>
         </Root> {/* replace BrowserRouter with Root */}
+        <ToastContainer hideProgressBar={true} newestOnTop={true} />
       </div>
     );
   }
